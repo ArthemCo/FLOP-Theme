@@ -1,0 +1,87 @@
+.main-navigation { // invert later to mobile first
+	position: fixed;
+	top: $site-border-size;
+	right: $site-border-size;
+
+	ul {
+		// display: none;
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
+
+		ul {
+			ul {
+
+			}
+
+			li {
+				&:hover > ul,
+				&.focus > ul {
+					// left: 100%;
+				}
+			}
+
+			:hover > a,
+			.focus > a {
+			}
+
+			a:hover,
+			a.focus {
+			}
+		}
+
+		li:hover > ul,
+		li.focus > ul {
+			// left: auto;
+		}
+	}
+
+	li {
+		height: 3em;
+		display: block;
+		float: left;
+		border-left: 1px solid $color__brand-white;
+		border-bottom: 1px solid $color__brand-white;
+		text-transform: uppercase;
+		// padding: 0.8em 1em;
+
+		&:hover {
+			background: $color__brand-white;
+		}
+
+		&:hover > a,
+		&.focus > a {
+			color: $color__brand-jet;
+		}
+	}
+
+	a {
+		// width: 100%;
+		display: block;
+		text-decoration: none;
+		color: $color__brand-white;
+		padding: 0.8em 1em;
+		text-transform: uppercase;
+	}
+
+	.current_page_item > a,
+	.current-menu-item > a,
+	.current_page_ancestor > a,
+	.current-menu-ancestor > a {
+	}
+}
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+	//display: block;
+}
+
+@include media('>tablet') {
+	.menu-toggle {
+		// display: none;
+	}
+	.main-navigation ul {
+		//display: block;
+	}
+}

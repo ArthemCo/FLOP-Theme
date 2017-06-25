@@ -1,0 +1,61 @@
+@import "variables-site/variables-site";
+
+// In order of appearance
+
+body {
+	background: $color__brand;
+}
+
+// logo
+.login h1 a {
+	background-image: url(../img/flop_login_logo.png?ver=1);
+	background-image: none,url(../img/flop_login_logo.svg?ver=1);
+}
+
+// labels
+.login label {
+	font-size: 12px;
+	color: #555555;
+}
+
+.login #login_error, .login .message {
+	border-left: 4px solid $color__brand-jet;
+}
+
+.login input[type="text"]{
+	background-color: #ffffff;
+	border-color:#dddddd;
+}
+
+.login input[type="password"]{
+	background-color: #ffffff;
+	border-color:#dddddd;
+}
+
+.login .button-primary {
+	width: 120px;
+	border-radius: 0px;
+	background: $color__brand-jet;
+	border-color: $color__brand-black $color__brand-black $color__brand-black;
+	box-shadow: 0 1px 0 $color__brand-black;
+	text-shadow: none;
+
+	&:focus {
+		box-shadow: none;
+	}
+
+	&:hover, &:active {
+		border-radius: 0px;
+		background: $color__brand-jet;
+		border-color: $color__brand-black $color__brand-black $color__brand-black;
+		box-shadow: 0 1px 0 $color__brand-black;
+	} 
+}
+
+.login #backtoblog a, .login #nav a {
+	color: $color__brand-jet;
+
+	&:hover {
+		color: $color__brand-white;
+	}
+}

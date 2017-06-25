@@ -1,0 +1,12 @@
+@import "grid";
+@import "decoration";
+@import 'home';
+
+.content-area {
+	background: $color__background-body;
+}
+
+.page-header {
+	margin-top: $nav-height-computed;
+	min-height: 90vh;
+}

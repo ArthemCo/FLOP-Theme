@@ -1,0 +1,45 @@
+@import "widgets";
+@import "links";
+@import "menus";
+
+.site-title a { // this shows qhen there is no image set
+	color: $color__brand-white;
+	text-decoration: none;
+	position: fixed;
+	top: $site-border-size * 1.5;
+	left: $site-border-size * 2;
+}
+
+.site-logo {
+	position: fixed;
+	width: 60px;
+	top: $site-border-size * 2;
+	left: $site-border-size * 2;
+}
+
+
+
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+
+	.site-main & {
+		margin: 0 0 1.5em;
+		overflow: hidden;
+	}
+
+	.nav-previous {
+		float: left;
+		width: 50%;
+	}
+
+	.nav-next {
+		float: right;
+		text-align: right;
+		width: 50%;
+	}
+}
+
+.post-navigation {
+	width: 100%;
+}

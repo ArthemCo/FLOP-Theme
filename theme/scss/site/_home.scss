@@ -1,0 +1,135 @@
+// mobile responsiveness first?
+
+$hero__height-mobile: 100vh;
+$hero__height-desktop: 30em;
+
+.content-area.hero-banner {
+	margin-top: $hero__height-mobile;
+}
+
+#hero {
+	position: fixed;
+	top: 0;
+	z-index: -1;
+	height: $hero__height-mobile;
+	width: 100vw;
+	background-size: cover !important;
+}
+
+#hero-text {
+	margin: 0 auto;
+	width: 60%;
+	height: 100%;
+	color: $color__brand-white;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	h1 {
+		text-transform: uppercase;
+		font-size: 2em;
+		line-height: 1.05;
+		margin-bottom: 1px;
+		font-family: 'League Spartan';
+		letter-spacing: 2px;
+	}
+}
+
+// a <section> element
+.home-gallery-meetup {
+	position: relative;
+	padding-top: 2em;
+	padding-left: 5em;
+	.meetup-details {
+		position: absolute;
+		top: 1em;
+		left: 0;
+		width: 5em;
+		padding: 1em;
+	}
+}
+
+.home-gallery-item {
+	width: calc(100% - 2em);
+	height: 10em;
+	position: relative;
+	margin-left: 1em;
+	margin-bottom: 1em;
+	display: inline-block;
+	&.no-thumbnail {
+		background-color: $color__brand;
+		.entry-details {
+			background: none;
+			opacity:  1;
+		}
+	}
+
+	.entry-link {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-size: cover !important;
+	}
+
+	.entry-details {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		color: $color__brand-white;
+		background: $color__brand-black;
+		opacity: 0;
+		transition: opacity .35s ease-in-out;
+		&:hover {
+			opacity: 0.8;
+		}
+
+	}
+	.entry-title {
+		margin: 1em;
+	}
+}
+
+
+@include media('>phablet') {
+	#hero-text h1 {
+		font-size: 3em;
+	}
+
+	.home-gallery-item {
+		width: 49%;
+	}
+	.home-gallery-meetup {
+		padding-left: 10em;
+		.meetup-details {
+			width: 10em;
+		}
+	}
+	.home-gallery-item {
+		width: calc(49% - 2em);
+	}
+
+}
+
+@include media('>tablet') {
+	#hero {
+		height: $hero__height-desktop;
+	}
+	#hero-text h1 {
+		font-size: 3.56em;
+	}
+	.content-area.hero-banner {
+		margin-top: $hero__height-desktop;
+	}
+	.home-gallery-item {
+		width: calc(48% - 1em);
+		height: 15em;
+	}
+}
+
+@include media('>desktop') {
+	.home-gallery-item {
+		width: calc(32% - 1em);
+		height: 15em;
+	}
+}

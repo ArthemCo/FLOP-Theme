@@ -1,0 +1,65 @@
+html {
+	box-sizing: border-box;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+body {
+	background: $color__background-body;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-moz-font-feature-settings: "liga", "kern";
+	font-feature-settings: "liga", "kern";
+	text-rendering: optimizelegibility;
+	scrollbar-base-color: black;
+  touch-action: manipulation;
+}
+
+blockquote, q {
+	quotes: "" "";
+
+	&:before,
+	&:after {
+		content: "";
+	}
+}
+
+hr {
+	background-color: $color__background-hr;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+// styles the scrollbar on supported browsers (chrome & webkit-based, IE)
+::-webkit-scrollbar-thumb:vertical {
+	height: 10px;
+	background-color: $color__brand;
+}
+
+::-webkit-scrollbar {
+	width: 5px;
+	height: 1px;
+	background: $color__background-body;
+}
+
+::-moz-selection {
+	background: $color__text-highlight;
+	color: white;
+}
+
+::selection {
+	background: $color__text-highlight;
+	color: white;
+}
+
+
+
+@import "lists";
+@import "tables";

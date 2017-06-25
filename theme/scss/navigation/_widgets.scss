@@ -1,0 +1,37 @@
+#secondary {
+	background: $color__brand-black;
+	display: flex;
+	flex-wrap: wrap;
+	// border-top: 1px solid $color__brand-white;
+
+	.widget:not(.widget_search) {
+		margin: 1em;
+		ul {
+			list-style-type: none;
+			margin: 1em;
+			padding: 0;
+			li a {
+				color: $color__brand-blue;
+			}
+		}
+	}
+
+	.widget_search {
+		flex-grow: 5;
+		width: 100%;
+		input[type=search] {
+			background-color: $color__brand-jet;
+			border: none;
+			width: 100%;
+			padding: 2rem;
+			font-size: 1.3em;
+		}
+		input[type=submit] {
+			visibility: hidden;
+		}
+		
+	}
+	h2 {
+		font-weight: 300;
+	}
+}

@@ -1,0 +1,35 @@
+$site-border-size: 0.7em;
+$site-gutter-width: 10%;
+$site-column-divs: 12;
+
+$nav-height-computed: (2em + $site-border-size) * 2;
+
+// for the media query mixin :
+
+$breakpoints: (
+  'phone': 20em,
+	'phablet': 34.375em,
+  'tablet': 48em,
+  'desktop': 64em,
+	'ultrawide': 120em
+) !default;
+
+$media-expressions: (
+  'screen': 'screen',
+  'print': 'print',
+  'handheld': 'handheld',
+  'landscape': '(orientation: landscape)',
+  'portrait': '(orientation: portrait)',
+  'retina2x': '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)',
+  'retina3x': '(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi)'
+) !default;
+
+$unit-intervals: (
+  'px': 1,
+  'em': 0.01,
+  'rem': 0.1
+) !default;
+
+$im-media-support: true !default;
+$im-no-media-breakpoint: 'desktop' !default;
+$im-no-media-expressions: ('screen', 'portrait', 'landscape') !default;
