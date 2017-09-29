@@ -10,7 +10,7 @@
 	pointer-events: none;
 	z-index: 999;
 	border: 0px solid $color__brand;
-	@include media('>phone') {
+	@include media('>tablet') {
 		border-width: $site-border-size;
 	}
 }

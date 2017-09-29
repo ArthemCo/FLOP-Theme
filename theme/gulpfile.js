@@ -3,7 +3,7 @@
 	==
 	run the whole shabang with `$ gulp watch` in the project directory
 	install them all with
-	$ npm i --save-dev gulp gulp-sass gulp-concat gulp-rename gulp-uglify browser-sync 
+	$ npm i --save-dev gulp gulp-sass gulp-concat gulp-rename gulp-babel browser-sync babel-preset-env
 */
 
 // SCSS, HTML, JS development
@@ -11,7 +11,7 @@ const gulp = require('gulp');
 const sass = require('gulp-sass');
 const concat = require('gulp-concat');
 const rename = require('gulp-rename');
-const uglify = require('gulp-uglify');
+const babili = require('gulp-babel');
 const browserSync = require('browser-sync').create();
 
 // environment variables
@@ -41,7 +41,7 @@ gulp.task('scripts', function() {
     .pipe(concat('app.js'))
     .pipe(gulp.dest(jsDist))
 		.pipe(rename('app.min.js'))
-		.pipe(uglify().on('error', function (err) {
+		.pipe(babili({presets: ['babili']}).on('error', function (err) {
 			console.error(err.message);
 			browserSync.notify(err.message, 3000); // Display error in the browser
 			this.emit('end'); // Prevent gulp from catching the error and exiting the watch process
