@@ -11,7 +11,7 @@ const gulp = require('gulp');
 const sass = require('gulp-sass');
 const concat = require('gulp-concat');
 const rename = require('gulp-rename');
-const babili = require('gulp-babel');
+const minify = require("gulp-babel-minify");
 const browserSync = require('browser-sync').create();
 
 // environment variables
@@ -41,7 +41,7 @@ gulp.task('scripts', function() {
     .pipe(concat('app.js'))
     .pipe(gulp.dest(jsDist))
 		.pipe(rename('app.min.js'))
-		.pipe(babili({presets: ['babili']}).on('error', function (err) {
+		.pipe(minify({mangle: {keepClassName: true}}).on('error', function (err) {
 			console.error(err.message);
 			browserSync.notify(err.message, 3000); // Display error in the browser
 			this.emit('end'); // Prevent gulp from catching the error and exiting the watch process

@@ -1,0 +1,87 @@
+$navWidth: $nav-toggle-size;
+$navPad: 0.5rem;
+
+#nav-toggle {
+	cursor: pointer;
+	z-index: 3;
+	height: $navWidth;
+	width: $navWidth;
+	position: fixed;
+	background: $color__brand;
+	bottom:$navPad;
+	right: $navPad; // change to left for alternate look
+	padding: $navPad*1.5;
+	-webkit-transition: all .25s ease;
+	   -moz-transition: all .25s ease;
+	    -ms-transition: all .25s ease;
+	     -o-transition: all .25s ease;
+	        transition: all .25s ease;
+	z-index: 11;
+
+	span {
+		position: absolute;
+		height: 2px;
+		width: $navWidth/3.4;
+		background: $color__brand-white;
+		transition: transform .1s $easeOutQuint, position .1s $easeOutQuint;
+
+		&:nth-child(1) {
+			top: $navPad*2;
+		}
+
+		&:nth-child(2) {
+			top: $navPad*2;
+			left: $navWidth/2;
+		}
+
+		&:nth-child(3) {
+			top: $navPad*3.2;
+		}
+
+		&:nth-child(4) {
+			top: $navPad*3.2;
+			left: $navWidth/2;
+		}
+		&:nth-child(5) {
+			top: $navPad*4.5;
+		}
+		&:nth-child(6) {
+			top: $navPad*4.5;
+			left: $navWidth/2;
+		}
+	}
+}
+
+
+#nav-toggle.nav-is-open {
+	background: $color__brand-jet;
+
+	span {
+		&:nth-child(1) {
+			transform: rotate(45deg);
+			top: $navPad*2.5;
+			left: 13px
+		}
+		&:nth-child(2) {
+			transform: rotate(-45deg);
+			top: $navPad*2.5;
+			left: $navWidth/2.2
+		}
+		&:nth-child(3) {
+			opacity: 0;
+		}
+		&:nth-child(4) {
+			opacity: 0;
+		}
+		&:nth-child(5) {
+			top: $navPad*4;
+			transform: rotate(-45deg);
+			left: 13px;
+		}
+		&:nth-child(6) {
+			top: $navPad*4;
+			transform: rotate(45deg);
+			left: $navWidth/2.2
+		}
+	}
+}

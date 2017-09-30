@@ -1,8 +1,9 @@
-$site-border-size: 0.2rem;
+$site-border-size: 0.25rem;
 $site-gutter-width: 10%;
 $site-column-divs: 12;
 
 $nav-height-computed: (2rem + $site-border-size) * 2;
+$nav-toggle-size: 3.5rem;
 
 // for the media query mixin :
 

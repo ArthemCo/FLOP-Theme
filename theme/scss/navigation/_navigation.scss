@@ -1,4 +1,4 @@
-@import "widgets";
+@import 'toggle';
 @import "links";
 @import "menus";
 
@@ -11,35 +11,54 @@
 }
 
 .site-logo {
-	position: fixed;
-	width: 60px;
-	top: $site-border-size * 2;
-	left: $site-border-size * 2;
+	position: absolute;
+	z-index: 0;
+	width: 80px;
+	top: $site-border-size + 1rem;
+	left: $site-border-size + 1rem;
+	padding: 0.5rem;
 }
 
-
+.site-main {
+	padding-bottom: 3em;
+}
 
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
 
 	.site-main & {
-		margin: 0 0 1.5em;
 		overflow: hidden;
 	}
 
 	.nav-previous {
 		float: left;
 		width: 50%;
+		&::before {
+			content: "◅ ";
+		}
 	}
 
 	.nav-next {
 		float: right;
 		text-align: right;
 		width: 50%;
+		&::after {
+			content: " ▻"
+		}
 	}
 }
 
 .post-navigation {
 	width: 100%;
+	padding: 1em;
+	color: $color__brand-white;
+	background: $color__brand;
+	a {
+		color: $color__brand-white;
+		text-decoration: none;
+		&:hover {
+			color: $color__brand-jet;
+		}
+	}
 }

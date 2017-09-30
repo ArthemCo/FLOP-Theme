@@ -1,7 +1,16 @@
 .main-navigation { // invert later to mobile first
 	position: fixed;
-	top: $site-border-size;
-	right: $site-border-size;
+	-webkit-transform: translate3D(0, 120%, 0);
+	   -moz-transform: translate3D(0, 120%, 0);
+	    -ms-transform: translate3D(0, 120%, 0);
+	     -o-transform: translate3D(0, 120%, 0);
+	        transform: translate3D(0, 120%, 0);
+  transition: all .25s ease;
+  width: 100vw;
+  height: 100vh;
+  background: $color__brand-white;
+  z-index: 10;
+
 
 	ul {
 		// display: none;
@@ -39,9 +48,7 @@
 	li {
 		height: 3em;
 		display: block;
-		float: left;
-		border-left: 1px solid $color__brand-white;
-		border-bottom: 1px solid $color__brand-white;
+		text-align: center;
 		text-transform: uppercase;
 		// padding: 0.8em 1em;
 
@@ -56,11 +63,12 @@
 	}
 
 	a {
-		// width: 100%;
 		display: block;
 		text-decoration: none;
-		color: $color__brand-white;
-		padding: 0.8em 1em;
+		color: $color__brand-jet;
+		margin: 1em;
+		font-weight: 800;
+		font-size: 2em;
 		text-transform: uppercase;
 	}
 
@@ -71,10 +79,13 @@
 	}
 }
 
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	//display: block;
+
+.main-navigation.nav-is-open {
+	-webkit-transform: translate3D(0,0,0);
+	   -moz-transform: translate3D(0,0,0);
+	    -ms-transform: translate3D(0,0,0);
+	     -o-transform: translate3D(0,0,0);
+	        transform: translate3D(0,0,0);
 }
 
 @include media('>tablet') {

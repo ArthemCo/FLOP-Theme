@@ -1,6 +1,8 @@
 @import "grid";
 @import "decoration";
 @import 'home';
+@import 'page';
+@import 'footer';
 
 .content-area {
 	background: $color__background-body;
@@ -8,5 +10,8 @@
 
 .page-header {
 	margin-top: $nav-height-computed;
+}
+
+#content {
 	min-height: 90vh;
 }

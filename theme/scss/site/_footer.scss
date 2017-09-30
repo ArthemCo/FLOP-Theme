@@ -1,8 +1,11 @@
+.site-footer {
+	background: $color__background-body;
+}
+
 #secondary {
 	background: $color__brand-black;
 	display: flex;
 	flex-wrap: wrap;
-	// border-top: 1px solid $color__brand-white;
 
 	.widget:not(.widget_search) {
 		margin: 1em;

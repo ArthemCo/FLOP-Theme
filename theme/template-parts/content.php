@@ -1,29 +1,25 @@
-<?php
-/**
- * Template part for displaying posts
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package flop
- */
 
-?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('container'); ?>>
-	<header class="page-header">
-		<?php 
+<article id="post-<?php the_ID(); ?>">
+	<?php $bg = false;
 
-		the_title( '<h1 class="entry-title">', '</h1>' );
+	if (has_post_thumbnail( $post->ID ) ): ?>
+	  <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); 
+	  $bg = true;
+	  ?>
+	  <div id="page-bg" style="background-image: url('<?php echo $image[0]; ?>')"></div>
+	<?php endif; ?>
 
-		the_post_thumbnail();
+	<header class="page-header <?php if ($bg) { echo 'has-bg'; } ?>">
+		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
-		if ( 'post' === get_post_type() ) : ?>
+		<?php if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
 			<?php flop_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php
-		endif; ?>
-	</header><!-- .entry-header -->
+		</div>
+		<?php endif; ?>
+
+	</header>
 
 	<div class="entry-content">
 		<?php
@@ -38,9 +34,9 @@
 				'after'  => '</div>',
 			) );
 		?>
-	</div><!-- .entry-content -->
+	</div>
 
 	<footer class="entry-footer">
 		<?php flop_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-## -->
+	</footer>
+</article>

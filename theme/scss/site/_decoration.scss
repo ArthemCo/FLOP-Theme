@@ -17,7 +17,7 @@
 
 // body > .site > .site-content
 .site {
-	@include media('>phone') {
+	@include media('>tablet') {
 		padding: $site-border-size;
 	}
 }
